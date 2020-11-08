@@ -13,12 +13,12 @@ html,body{
     place-items: center;
 }
 .day {
-    background-image: url('../img/backgroundday2.png');
+    background-image: url('../img/backgroundday.png');
     background-size: 320px 180px;
     color: black;
 }
 .night {
-    background-image: url('../img/backgrounddark.png');
+    background-image: url('../img/backgroundnight.png');
     background-size: 320px 180px;
     background-color: #2f2e41;
     color: white;
