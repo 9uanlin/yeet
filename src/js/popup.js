@@ -18,8 +18,6 @@ function displayClock() {
     setTimeout(displayClock(), 500);
 };
 
-var linkArray = ["https://www.google.com/", "https://www.google.com/"];
-
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", openTabs);
 

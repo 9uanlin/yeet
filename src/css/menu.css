@@ -40,6 +40,9 @@ html,body{
     transition: all 0.3s ease-out;
 }
 .wrapper .button:nth-child(1):hover .icon{
+    background:#90ee90;
+}
+.wrapper .button:nth-child(2):hover .icon{
     background:#ff0000;
 }
 .wrapper .button .icon i{
@@ -57,5 +60,7 @@ html,body{
     margin-left: 5px;
 }
 .wrapper .button:nth-child(1) span{
+    color: #90ee90;
+}.wrapper .button:nth-child(2) span{
     color: #ff0000;
 }
