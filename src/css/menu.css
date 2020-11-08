@@ -11,7 +11,18 @@ html,body{
     height: 180px;
     width: 320px;
     place-items: center;
-    
+}
+#textField {
+    text-align: left;
+}
+#listContainer {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    text-transform: lowercase;
+}
+#deletebutton {
+    color: #ff0000;
 }
 .wrapper .button{
     display: inline-block;
@@ -19,11 +30,13 @@ html,body{
     width: 30px;
     float: left;
     margin: 0 5px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
     overflow: hidden;
     background: white;
     border-radius: 25px;
     cursor: pointer;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 2.5px rgba(0,0,0,0.1);
     transition: all 0.3s ease-out;
 }
 .wrapper .button:hover{
