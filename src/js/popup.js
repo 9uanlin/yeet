@@ -8,14 +8,27 @@ function displayClock() {
     var hours = dt.getHours();
     var minutes = dt.getMinutes();
     var AmorPm = hours >=12 ? 'pm' : 'am';
+
+    if (hours >= 19 || hours <= 4) {
+        document.body.className = "night";
+    }
+    else {
+        document.body.className = "day";
+    }
+
     hours = (hours % 12) || 12;
     if (minutes < 10) {
         minutes = "0" + minutes;
     }
     var finalTime = hours + ":" + minutes + " " +AmorPm;
-    
+
+
     document.getElementById("clock").innerHTML = finalTime;
     setTimeout(displayClock(), 500);
+};
+
+function changeBackground() {
+    setInterval(change)
 };
 
 var linkArray = ["https://www.google.com/", "https://www.google.com/"];
