@@ -1,10 +1,10 @@
+// clock
 document.addEventListener("DOMContentLoaded", function() {
     displayClock();
 });
 
 function displayClock() {
-    //Gets date and time information
-    var dt = new Date(); // This is variable
+    var dt = new Date();
     var hours = dt.getHours();
     var minutes = dt.getMinutes();
     var AmorPm = hours >=12 ? 'pm' : 'am';
@@ -18,17 +18,27 @@ function displayClock() {
     setTimeout(displayClock(), 500);
 };
 
+// get stored link array
+chrome.storage.sync.get('linkArray', function(data){
+    linkArray = data.linkArray;});
+
+// start button
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", openTabs);
 
 function openTabs() {
-    for (var i = 0; i < linkArray.length; i++) {
-        chrome.tabs.create({
-            url: linkArray[i]
-        });
+    if (linkArray == null || linkArray.length == 0) {
+        alert("you have no saved websites!")
+    } else {
+        for (var i = 0; i < linkArray.length; i++) {
+            chrome.tabs.create({
+                url: linkArray[i]
+            });
+        }
     }
 };
 
+// edit button
 var editButton = document.getElementById("edit");
 editButton.addEventListener("click", displayMenu);
 
@@ -36,6 +46,7 @@ function displayMenu() {
     window.location.replace("menu.html");
 }
 
+// close button
 var closeButton = document.getElementById("close");
 closeButton.addEventListener("click", closePopup);
 

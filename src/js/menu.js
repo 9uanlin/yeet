@@ -1,13 +1,19 @@
-//var linkArray = chrome.storage.sync.get(["linkArray"], function(result) {
-//    console.log(result.key);
-//})
+// get stored link array
+chrome.storage.sync.get('linkArray', function(data){
+    if (data.linkArray == null) {
+        linkArray = [];
+    } else {
+        linkArray = data.linkArray;
+    }
+    displayLinkArray(linkArray);});
+
+// add ul element to contain list
 ul = document.createElement("ul");
 document.getElementById("listContainer").appendChild(ul);
 
-displayLinkArray();
-
-function displayLinkArray() {
-    linkArray.forEach(function (link) {
+// display link array
+function displayLinkArray(inputArray) {
+    inputArray.forEach(function (link) {
         let li = document.createElement('li');
         li.setAttribute("id",link);
         ul.appendChild(li);
@@ -15,6 +21,7 @@ function displayLinkArray() {
     });
 }
 
+// add button
 var addButton = document.getElementById("add");
 addButton.addEventListener("click", addLink);
 
@@ -40,18 +47,15 @@ $("ul").on("click", "button", function(e) {
     var index = linkArray.indexOf(linkToDelete);
     if (index >= 0) {
         linkArray.splice(index, 1);
+        $(this).parent().remove();
     }
-    $(this).parent().remove();
 });
 
-
-
+// close button
 var closeButton = document.getElementById("closeMenu");
 closeButton.addEventListener("click", closeMenu);
 
 function closeMenu() {
-    chrome.storage.sync.set({"linkArray": linkArray}, function() {
-        message("Settings saved");
-    })
+    chrome.storage.sync.set({'linkArray': linkArray}, function() {})
     window.location.replace("popup.html");
 }
