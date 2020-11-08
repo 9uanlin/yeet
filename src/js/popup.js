@@ -27,10 +27,6 @@ function displayClock() {
     setTimeout(displayClock(), 500);
 };
 
-function changeBackground() {
-    setInterval(change)
-};
-
 var linkArray = ["https://www.google.com/", "https://www.google.com/"];
 
 var startButton = document.getElementById("start");
