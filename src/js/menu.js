@@ -15,9 +15,9 @@ document.getElementById("listContainer").appendChild(ul);
 function displayLinkArray(inputArray) {
     inputArray.forEach(function (link) {
         let li = document.createElement('li');
-        li.setAttribute("id",link);
+        li.setAttribute("id", link);
         ul.appendChild(li);
-        li.innerHTML += link + " <button>remove</button>";
+        li.innerHTML += link + ' <i class="fas fa-times icon" id="deletebutton"></i>';
     });
 }
 
@@ -32,16 +32,16 @@ function addLink() {
     } else {
         linkArray.push(document.getElementById("textField").value);
         let li = document.createElement('li');
-        li.setAttribute("id",link);
+        li.setAttribute("id", link);
         ul.appendChild(li);
     
-        li.innerHTML += link + " <button>remove</button>";
+        li.innerHTML += link + ' <i class="fas fa-times icon" id="deletebutton"></i>';
         document.getElementById("textField").value="";
     }
 }
 
 // manages deleting links of list
-$("ul").on("click", "button", function(e) {
+$("ul").on("click", "i", function(e) {
     e.preventDefault();
     var linkToDelete = $(this).closest("li").attr("id");
     var index = linkArray.indexOf(linkToDelete);
