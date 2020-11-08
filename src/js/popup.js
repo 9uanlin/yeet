@@ -20,10 +20,10 @@ function displayClock() {
     if (minutes < 10) {
         minutes = "0" + minutes;
     }
-    var finalTime = hours + ":" + minutes + " " +AmorPm;
+    var finalTime = `${hours}:${minutes} ${AmorPm}`;
 
 
-    document.getElementById("clock").innerHTML = finalTime;
+    document.getElementById("clock").innerHTML = String(finalTime);
     setTimeout(displayClock(), 500);
 };
 

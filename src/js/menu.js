@@ -26,7 +26,7 @@ closeButton.addEventListener("click", closeMenu);
 
 function closeMenu() {
     chrome.storage.sync.set({"linkArray": linkArray}, function() {
-        message("Settings saved");
+        alert("Settings saved");
     })
     window.location.replace("popup.html");
 }
