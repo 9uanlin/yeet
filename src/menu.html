@@ -2,24 +2,29 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>zoom uni launcher</title>
+        <title>yeet</title>
         <link rel="stylesheet" href ="css/menu.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-                
+        <script src="js/jquery.min.js"></script>
     </head>
 </html>
 <body>
-    <div id="listContainer">
-
-    </div>
+    <h3>Websites saved:</h3>
+    <ul id="listContainer"></ul>
+    <input type=text id="textField">
     <div class="wrapper">
-        <div class="button" id="close">
+        <div class="button" id="add">
+            <div class="icon">
+                <i class="fas fa-plus"></i>
+            </div>
+            <span>Add</span>
+        </div>
+        <div class="button" id="closeMenu">
             <div class="icon">
                 <i class="fas fa-times"></i>
             </div>
             <span>Close</span>
         </div>
     </div>
-    
     <script src="js/menu.js"></script> 
 </body>
