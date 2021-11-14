@@ -1,5 +1,7 @@
 # yeet 🚀
 
+![yeet](yeet.png)
+
 ## A launcher for those too lazy to click through their bookmarks bar
 During the pandemic I got annoyed of having to click through my bookmarks bar everyday to open all the websites I needed for school... and thus, yeet was born, a quick-launcher Chrome extension that allows users to open all the tabs they need for work in one click.
 
